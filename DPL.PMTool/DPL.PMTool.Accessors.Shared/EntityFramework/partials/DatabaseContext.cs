@@ -12,7 +12,7 @@ namespace DPL.PMTool.Accessors.Shared.EntityFramework
             base.OnConfiguring(optionsBuilder);
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer(Common.Shared.Config.SqlServerConnectionString);
+                optionsBuilder.UseSqlServer(Common.Shared.Config.SqliteConnectionString);
             }
         }
     }
