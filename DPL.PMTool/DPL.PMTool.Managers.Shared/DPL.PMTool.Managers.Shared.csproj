@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="9.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="DataTransferObjects\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DPL.PMTool.Accessors\DPL.PMTool.Accessors.csproj" />
+    <ProjectReference Include="..\DPL.PMTool.Common.Shared\DPL.PMTool.Common.Shared.csproj" />
+    <ProjectReference Include="..\DPL.PMTool.Engines\DPL.PMTool.Engines.csproj" />
+    <ProjectReference Include="..\DPL.PMTool.Utilities\DPL.PMTool.Utilities.csproj" />
+  </ItemGroup>
+
+</Project>
