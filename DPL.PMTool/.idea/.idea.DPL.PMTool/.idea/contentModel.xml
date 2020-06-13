@@ -25,6 +25,7 @@
         <e p="AccessorFactory.cs" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="DPL.PMTool.Accessors.csproj" t="IncludeRecursive" />
+        <e p="IProjectAccess.cs" t="Include" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netcoreapp3.1" t="Include">
@@ -32,6 +33,7 @@
             </e>
           </e>
         </e>
+        <e p="ProjectAccess.cs" t="Include" />
       </e>
       <e p="DPL.PMTool.Accessors.Shared" t="IncludeRecursive">
         <e p="AccessorBase.cs" t="Include" />
@@ -40,9 +42,12 @@
         <e p="DPL.PMTool.Accessors.Shared.csproj" t="IncludeRecursive" />
         <e p="DTOMapper.cs" t="Include" />
         <e p="EntityFramework" t="Include">
+          <e p="Activity.cs" t="Include" />
+          <e p="DatabaseContext.cs" t="Include" />
           <e p="partials" t="Include">
             <e p="DatabaseContext.cs" t="Include" />
           </e>
+          <e p="Project.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
@@ -213,6 +218,7 @@
         <e p="Scripts" t="Include">
           <e p="001" t="Include">
             <e p="001.InitialScript.sql" t="Include" />
+            <e p="002.Activities.sql" t="Include" />
           </e>
         </e>
       </e>
@@ -280,6 +286,7 @@
             </e>
           </e>
         </e>
+        <e p="ProjectAccessTests.cs" t="Include" />
         <e p="TestAccessorBase.cs" t="Include" />
       </e>
       <e p="DPL.PMTool.Tests.EngineTests" t="IncludeRecursive">

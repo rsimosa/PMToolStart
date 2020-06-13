@@ -14,7 +14,7 @@ namespace DPL.PMTool.Accessors
             // NOTE: this is here to ensure the factories from the Manager are propogated down to the other factories 
             _utilityFactory = utilityFactory ?? new UtilityFactory(Context);
 
-            //AddType<IShippingRulesAccessor>(typeof(ShippingRulesAccessor));
+            AddType<IProjectAccess>(typeof(ProjectAccess));
         }
 
         public T CreateAccessor<T>() where T : class

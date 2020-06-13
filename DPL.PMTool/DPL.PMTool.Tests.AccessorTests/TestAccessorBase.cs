@@ -2,36 +2,53 @@
 using DPL.PMTool.Accessors.Shared.EntityFramework;
 using DPL.PMTool.Common.Contracts;
 using System.Transactions;
+using DPL.PMTool.Accessors;
+using DPL.PMTool.Utilities;
 
 namespace DPL.PMTool.Tests.AccessorTests
 {
     [TestClass]
-    public abstract class TestAccessorBase
+    public abstract class TestAccessorBase 
     {
-        private TransactionScope _transactionScopeFixture;
-
         public TestAccessorBase()
         {
+            AccessorFactory = new AccessorFactory(Context, new UtilityFactory(Context));
+            ProjectAccess = AccessorFactory.CreateAccessor<IProjectAccess>();
         }
 
-        [TestInitialize]
-        public void BaseTestInitialize()
+  
+        [TestInitialize()]
+        public void Init()
         {
-            var transactionOptions = new TransactionOptions
-            {
-                IsolationLevel = IsolationLevel.ReadCommitted,
-                Timeout = TransactionManager.MaximumTimeout
-            };
-            _transactionScopeFixture = new TransactionScope(
-                TransactionScopeOption.Required,
-                transactionOptions);
+            CreateGlobalContext();
         }
-        [TestCleanup]
-        public void BaseTestCleanup()
+
+        [TestCleanup()]
+        public void Cleanup()
         {
-            _transactionScopeFixture.Dispose();
+            CancelGlobalTransaction();
+        }
+
+        public static void CreateGlobalContext()
+        {
+            DatabaseContext.UnitTestContext = DatabaseContext.Create(false);
+            DatabaseContext.UnitTestContext.Database.BeginTransaction();
+        }
+
+        public static void CancelGlobalTransaction()
+        {
+            if (DatabaseContext.UnitTestContext != null)
+            {
+                DatabaseContext.UnitTestContext.Database.RollbackTransaction();
+                DatabaseContext.UnitTestContext.AllowDispose = true;
+                DatabaseContext.UnitTestContext.Dispose();
+                DatabaseContext.UnitTestContext = null;
+            }
         }
 
         protected AmbientContext Context { get; } = new AmbientContext();
+
+        protected AccessorFactory AccessorFactory { get; set; }
+        protected IProjectAccess ProjectAccess { get; set; }
     }
 }

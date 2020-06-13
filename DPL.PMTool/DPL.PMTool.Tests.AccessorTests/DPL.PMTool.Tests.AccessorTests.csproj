@@ -14,6 +14,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DPL.PMTool.Accessors.Shared\DPL.PMTool.Accessors.Shared.csproj" />
+    <ProjectReference Include="..\DPL.PMTool.Accessors\DPL.PMTool.Accessors.csproj" />
     <ProjectReference Include="..\DPL.PMTool.Common.Contracts\DPL.PMTool.Common.Contracts.csproj" />
   </ItemGroup>
 
