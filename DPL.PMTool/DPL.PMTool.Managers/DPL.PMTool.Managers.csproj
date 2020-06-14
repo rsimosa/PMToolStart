@@ -8,6 +8,7 @@
     <ProjectReference Include="..\DPL.PMTool.Accessors\DPL.PMTool.Accessors.csproj" />
     <ProjectReference Include="..\DPL.PMTool.Common.Contracts\DPL.PMTool.Common.Contracts.csproj" />
     <ProjectReference Include="..\DPL.PMTool.Common.Shared\DPL.PMTool.Common.Shared.csproj" />
+    <ProjectReference Include="..\DPL.PMTool.Contracts.Client\DPL.PMTool.Contracts.Client.csproj" />
     <ProjectReference Include="..\DPL.PMTool.Engines\DPL.PMTool.Engines.csproj" />
     <ProjectReference Include="..\DPL.PMTool.Managers.Shared\DPL.PMTool.Managers.Shared.csproj" />
     <ProjectReference Include="..\DPL.PMTool.Utilities\DPL.PMTool.Utilities.csproj" />

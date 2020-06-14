@@ -17,7 +17,7 @@ namespace DPL.PMTool.Client.Web.Controllers
             _planningManager = _managerFactory.CreateManager<IPlanningManager>();
         }
          
-        public string Test()
+        public TestMeResponse Test()
         {
             return _planningManager.TestMe();
         }

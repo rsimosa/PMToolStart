@@ -196,6 +196,7 @@
       <e p="DPL.PMTool.Contracts.Client" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
         <e p="DPL.PMTool.Contracts.Client.csproj" t="IncludeRecursive" />
+        <e p="IPlanningManager.cs" t="Include" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netcoreapp3.1" t="Include">
@@ -203,6 +204,7 @@
             </e>
           </e>
         </e>
+        <e p="TestMeResponse.cs" t="Include" />
       </e>
       <e p="DPL.PMTool.DbUp" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
@@ -251,7 +253,6 @@
       <e p="DPL.PMTool.Managers" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
         <e p="DPL.PMTool.Managers.csproj" t="IncludeRecursive" />
-        <e p="IPlanningManager.cs" t="Include" />
         <e p="ManagerFactory.cs" t="Include" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">

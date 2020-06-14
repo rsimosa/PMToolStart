@@ -4,9 +4,12 @@ namespace DPL.PMTool.Managers
 {
     public class PlanningManager : ManagerBase, IPlanningManager
     {
-        public string TestMe()
+        public TestMeResponse TestMe()
         {
-            return "TestMe";
+            return new TestMeResponse()
+            {
+                Message = "TestMe"
+            };
         }
     }
 }
