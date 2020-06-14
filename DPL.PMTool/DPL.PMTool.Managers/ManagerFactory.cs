@@ -12,7 +12,7 @@ namespace DPL.PMTool.Managers
     {
         public ManagerFactory(AmbientContext context) : base(context)
         {
-            //AddType<IAdminFulfillmentManager>(typeof(OrderManager));
+            AddType<IPlanningManager>(typeof(PlanningManager));
         }
 
         public T CreateManager<T>() where T : class

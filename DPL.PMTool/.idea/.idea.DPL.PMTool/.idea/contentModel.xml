@@ -62,7 +62,7 @@
         <e p="appsettings.json" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="Controllers" t="Include">
-          <e p="HomeController.cs" t="Include" />
+          <e p="PlanningController.cs" t="Include" />
         </e>
         <e p="DPL.PMTool.Client.Web.csproj" t="IncludeRecursive" />
         <e p="Models" t="Include">
@@ -251,6 +251,7 @@
       <e p="DPL.PMTool.Managers" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
         <e p="DPL.PMTool.Managers.csproj" t="IncludeRecursive" />
+        <e p="IPlanningManager.cs" t="Include" />
         <e p="ManagerFactory.cs" t="Include" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
@@ -259,6 +260,7 @@
             </e>
           </e>
         </e>
+        <e p="PlanningManager.cs" t="Include" />
       </e>
       <e p="DPL.PMTool.Managers.Shared" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />

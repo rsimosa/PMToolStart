@@ -4,4 +4,9 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\DPL.PMTool.Common.Contracts\DPL.PMTool.Common.Contracts.csproj" />
+    <ProjectReference Include="..\DPL.PMTool.Managers\DPL.PMTool.Managers.csproj" />
+  </ItemGroup>
+
 </Project>
