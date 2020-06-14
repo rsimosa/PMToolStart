@@ -6,5 +6,9 @@ namespace DPL.PMTool.Accessors
     {
         public Project Project(int id);
         Project SaveProject(Project project);
+
+
+        Activity Activity(int id);
+        Activity SaveActivity(Activity activity);
     }
 }

@@ -3,7 +3,7 @@ using DPL.PMTool.Accessors.Shared.EntityFramework;
 
 namespace DPL.PMTool.Accessors
 {
-    public class ProjectAccess : IProjectAccess
+    class ProjectAccess : IProjectAccess
     {
         public Project Project(int id)
         {
@@ -31,6 +31,32 @@ namespace DPL.PMTool.Accessors
 
             return project;
         }
+       
+        public Activity Activity(int id)
+        {
+            using (var db = DatabaseContext.Create())
+            {
+                return db.Activities.FirstOrDefault(p => p.Id == id);
+            }
+        }
         
+        public Activity SaveActivity(Activity activity)
+        {
+            using (var db = DatabaseContext.Create())
+            {
+                if (activity.Id == 0)
+                {
+                    db.Activities.Add(activity);
+                }
+                else
+                {
+                    db.Activities.Attach(activity);
+                }
+
+                db.SaveChanges();
+            }
+
+            return activity;
+        }
     }
 }

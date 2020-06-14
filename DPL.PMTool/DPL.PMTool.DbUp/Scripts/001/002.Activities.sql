@@ -7,6 +7,7 @@
     Priority numeric,
     Start datetime null,
     Finish datetime null, 
+    ProjectId int not null,
     CreatedAt datetime not null default current_timestamp,
     UpdatedAt datetime not null default current_timestamp
 )
