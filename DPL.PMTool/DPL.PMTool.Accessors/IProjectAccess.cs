@@ -4,7 +4,7 @@ namespace DPL.PMTool.Accessors
 {
     public interface IProjectAccess
     {
-        public Project Project(int id);
+        Project Project(int id);
         Project SaveProject(Project project);
 
 
