@@ -48,5 +48,6 @@ namespace DPL.PMTool.Tests.AccessorTests
             Assert.IsNotNull(loaded);
             Assert.IsTrue(loaded.Id > 0);
         }
+        
     }
 }
