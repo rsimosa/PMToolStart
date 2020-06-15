@@ -19,6 +19,7 @@ namespace DPL.PMTool.Engines
             _accessorFactory = accessorFactory ?? new AccessorFactory(Context, _utilityFactory);
 
             //AddType<IRemittanceCalculationEngine>(typeof(RemittanceCalculationEngine));
+            AddType<IScheduleEngine>(typeof(ScheduleEngine));
         }
 
         public T CreateEngine<T>() where T : class
