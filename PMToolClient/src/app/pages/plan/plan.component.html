@@ -1,1 +1,39 @@
-<p>plan works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <label>Name</label>
+      <input type="text" />
+    </div>
+    <div class="col-md-3">
+      <label>Start</label>
+      <input type="text" />
+    </div>
+    <div class="col-md-3"></div>
+    <div class="col-md-3">
+
+      <button (click)="saveProject()" class="btn btn-primary" type="button">Save</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table">
+        <colgroup span="4" class="columns"></colgroup>
+        <tr>
+          <th *ngFor="let names of columnName">{{names}}</th>
+        </tr>
+        <tr *ngFor="let data of projectObject.activities">
+          <td>{{data.id}}</td>
+          <td>{{data.taskName}}</td>
+          <td>{{data.estimate}}</td>
+          <td>{{data.predecessor}}</td>
+          <td>{{data.resource}}</td>
+          <td>{{data.priority}}</td>
+          <td>{{data.start}}</td>
+          <td>{{data.finish}}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <button (click)="addActivity()" class="btn btn-primary" type="button">Add Row</button>
+</div>
