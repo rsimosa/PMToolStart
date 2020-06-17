@@ -14,7 +14,7 @@ export class PlanComponent implements OnInit {
   public projectObject: Project;
   constructor(private planningService: PlanningService) {
     this.columnName = ['Id', 'Task Name', 'Estimate', 'Predecessors', 'Resource', 'Priority', 'Start', 'Finish'];
-    planningService.getProject().then(project => {
+    planningService.newProject().then(project => {
       this.projectObject = project;
     });
   }
@@ -38,9 +38,9 @@ export class PlanComponent implements OnInit {
     });
   }
 
-  async getProject() {
-    this.projectObject = await this.planningService.getProject();
-  }
+  // async newProject() {
+  //   this.projectObject = await this.planningService.newProject();
+  // }
 
   ngOnInit(): void {
   }
