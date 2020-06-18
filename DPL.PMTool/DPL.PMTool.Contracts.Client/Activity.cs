@@ -1,6 +1,6 @@
 using System;
 
-namespace DPL.PMTool.Accessors.Shared.EntityFramework
+namespace DPL.PMTool.Managers
 {
     public class Activity
     {
@@ -13,8 +13,5 @@ namespace DPL.PMTool.Accessors.Shared.EntityFramework
         public DateTime Start { get; set; }
         public DateTime Finish { get; set; }
         public int ProjectId { get; set; }
-        
-        public DateTime CreatedAt { get; set; } = DateTime.Now;
-        public DateTime UpdatedAt { get; set; } = DateTime.Now;
     }
 }

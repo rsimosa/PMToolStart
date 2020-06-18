@@ -6,17 +6,21 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TestComponent } from './pages/test/test.component';
 import { PlanComponent } from './pages/plan/plan.component';
+import { FormsModule }   from '@angular/forms';
+import { PlanListComponent } from './pages/plan-list/plan-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TestComponent,
-    PlanComponent
+    PlanComponent,
+    PlanListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PlanningService } from 'src/app/services/planning.service';
 import { Project } from 'src/app/dtos/Project';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
   selector: 'app-plan',
@@ -9,42 +10,48 @@ import { Project } from 'src/app/dtos/Project';
 })
 export class PlanComponent implements OnInit {
 
-  public columnName: Array<string>;
-  public projectData: Array<any> = [];
-  public projectObject: Project;
-  constructor(private planningService: PlanningService) {
-    this.columnName = ['Id', 'Task Name', 'Estimate', 'Predecessors', 'Resource', 'Priority', 'Start', 'Finish'];
-    planningService.newProject().then(project => {
-      this.projectObject = project;
+  project: Project = {
+    id: 0,
+    name: '',
+    start: new Date(),
+    activities: []
+  };
+  headers: Array<string>;
+
+  constructor(
+    private route: ActivatedRoute,
+    private planningService: PlanningService) {
+    this.headers = ['Id', 'Task Name', 'Estimate', 'Predecessors', 'Resource', 'Priority', 'Start', 'Finish'];
+  }
+
+  async ngOnInit() {
+    this.route.params.subscribe(async params => {
+      console.log(params.id);
+      if (params.id > 0) {
+        // load a project
+      } else {
+        // new project
+        this.project = await this.planningService.newProject();
+      }
     });
   }
 
   async saveProject() {
-    alert("Saved");
-    this.planningService.saveProject(this.projectObject);
+    this.project = await this.planningService.saveProject(this.project);
+    console.log(this.project);
   }
 
-  async addActivity() {
-    alert("add row");
-    this.projectObject.activities.push({
-      id: 2,
-      taskName: 'Setup DB2',
+  async addRow() {
+    this.project.activities.push({
+      id: 0,
+      taskName: 'NEW',
       start: new Date(),
       finish: new Date(),
-      estimate: 2.0,
-      predecessor: 1,
-      resource: 'test',
-      priority: 500
+      estimate: 1.0,
+      predecessors: '1',
+      resource: 'Doug',
+      priority: 500,
+      projectId: 1,
     });
   }
-
-  // async newProject() {
-  //   this.projectObject = await this.planningService.newProject();
-  // }
-
-  ngOnInit(): void {
-  }
-
 }
-
-//this is where the data lives, its going to be bound to. planning service is going to load the data
