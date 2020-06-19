@@ -25,10 +25,14 @@ export class PlanComponent implements OnInit {
   }
 
   async ngOnInit() {
+    var projectId = this.route.snapshot.paramMap.get('id');
     this.route.params.subscribe(async params => {
-      console.log(params.id);
+      //console.log(params.id);
       if (params.id > 0) {
         // load a project
+        this.project = await this.planningService.project(params.id);
+
+
       } else {
         // new project
         this.project = await this.planningService.newProject();
@@ -49,9 +53,8 @@ export class PlanComponent implements OnInit {
       finish: new Date(),
       estimate: 1.0,
       predecessors: '1',
-      resource: 'Doug',
+      resource: '',
       priority: 500,
-      projectId: 1,
     });
   }
 }

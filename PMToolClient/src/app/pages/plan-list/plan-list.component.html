@@ -1,8 +1,12 @@
 
 <h1>Projects</h1>
 <table>
-    <tr *ngFor="let project of projects"> 
-        <td (click)="openProject(project.id)">{{project.id}} {{project.name}} </td>
-    </tr>   
+    <tr *ngFor="let project of projects">
+        <!-- <td (click)="openProject(project.id)">{{project.id}} {{project.name}} </td> -->
+        <td> <a [routerLink]="['/plan',project.id]">{{project.id}} {{project.name}}</a> </td>
+
+    </tr>
 </table>
+
+<button (click)="openProject(0)">New Project</button>
 

@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using DPL.PMTool.Managers;
 using DPL.PMTool.Common.Contracts;
+using DPL.PMTool.Contracts.Client;
 
 namespace DPL.PMTool.Client.Web.Controllers
 {
@@ -32,6 +33,12 @@ namespace DPL.PMTool.Client.Web.Controllers
         public Project SaveProject([FromBody]Project project)
         {
             return _planningManager.SaveProject(project);
+        }
+
+        [HttpGet]
+        public ProjectListItem[] Projects()
+        {
+            return _planningManager.Projects();
         }
     }
 }

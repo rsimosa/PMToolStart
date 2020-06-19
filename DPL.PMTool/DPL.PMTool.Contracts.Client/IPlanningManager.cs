@@ -1,4 +1,5 @@
 using DPL.PMTool.Accessors.Shared.EntityFramework;
+using DPL.PMTool.Contracts.Client;
 
 namespace DPL.PMTool.Managers
 {
@@ -8,5 +9,6 @@ namespace DPL.PMTool.Managers
 
         Project Project(int id);
         Project SaveProject(Project project);
+        ProjectListItem[] Projects();
     }
 }
